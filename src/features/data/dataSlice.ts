@@ -12,7 +12,7 @@ export interface DataState {
   favoriteFood: string
   favoriteMovie: string
   status: Status
-  timeStamp: Date
+  timeStamp: string
 }
 
 const initialState: DataState[] = [ rockyObj, miroslavObj, donnyObj, mattObj].map((o)=>{
@@ -21,7 +21,7 @@ const initialState: DataState[] = [ rockyObj, miroslavObj, donnyObj, mattObj].ma
         favoriteFood: o['Favorite Food'],
         favoriteMovie: o['Favorite Movie'],
         status: o.Status,
-        timeStamp: new Date()
+        timeStamp: ''
     } as DataState;
 
     return parseObject
@@ -31,9 +31,11 @@ export const dataSlice = createSlice({
   name: 'data',
   initialState,
   reducers: {
-    updateTimeStamp: (state, action: PayloadAction<DataState>) => {
-      // state.value += action.payload
-      console.log(action.payload)
+    updateTimeStamp: (state) => {
+      return state.map((specs)=>({
+        ...specs,
+        timeStamp: new Date().toISOString()
+      }))
     }
   },
 })

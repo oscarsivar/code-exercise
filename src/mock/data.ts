@@ -9,7 +9,7 @@ export let miroslavObj = {
     'Name': 'Miroslav',
     'Favorite Food': 'Sushi',
     'Favorite Movie': 'American Psycho',
-    'Status': 'Inactive'
+    'Status': 'Active'
   };
 
 export let donnyObj = {
@@ -23,5 +23,5 @@ export let mattObj = {
     'Name': 'Matt',
     'Favorite Food': 'Brisket Tacos',
     'Favorite Movie': 'The Princess Bride',
-    'Status': 'Inactive'
+    'Status': 'Active'
   };

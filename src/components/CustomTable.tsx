@@ -16,6 +16,10 @@ const columns: Column[] = [
   { id: 'name', label: 'Name', minWidth: 170 },
   { id: 'favoriteFood', label: 'Favorite Food', minWidth: 100 },
   { id: 'favoriteMovie', label: 'Favorite Movie', minWidth: 170, align: 'right' },
+  { id: 'timeStamp', 
+    label: 'Time Stamp', 
+    minWidth: 170,
+  } 
 ];
 
 export default function CustomTable() {
@@ -28,6 +32,10 @@ export default function CustomTable() {
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
   };
+
+  React.useEffect(() => {
+    dispatch(updateTimeStamp())
+  }, []); 
 
   const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRowsPerPage(+event.target.value);
@@ -62,9 +70,7 @@ export default function CustomTable() {
                       const value = row[column.id];
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          {column.format && typeof value === 'number'
-                            ? column.format(value)
-                            : value}
+                          {value}
                         </TableCell>
                       );
                     })}
