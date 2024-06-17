@@ -1,3 +1,39 @@
+/**
+ * CustomTable.tsx
+ *
+ * This component renders a custom table with the ability to sort each column.
+ *
+ * State:
+ * - page: Number representing the current page in pagination.
+ * - setPage: Function to update the current page.
+ * - rowsPerPage: Number representing the number of rows to display per page.
+ * - setRowsPerPage: Function to update the number of rows per page.
+ * - orderBy: Key of the Data object used to determine the column by which data is sorted.
+ * - setOrderBy: Function to update the column used for sorting.
+ * - rows: Array of data objects fetched from the Redux store.
+ * - order: Order type ('asc' or 'desc') determining the sort direction.
+ * - setOrder: Function to update the sort direction.
+ *  
+ * Redux:
+ * - Data: Array of data items with id, name, favorite movie, favorite food and timestamp.
+ *
+ * Actions:
+ * - updateTimestamp: Dispatches an action to update the timestamp when change happens.
+ *
+ * Dependencies:
+ * - React
+ * - @mui/material: For importing custom component for table
+ * - react-redux: For connecting the component to the Redux store.
+ * - Redux actions: updateTimestamp action creator.
+ *
+ * Example Usage:
+ * <CustomTable />
+ *
+ * Author: Oscar Elías
+ * Date: 16-06-2024
+ */
+
+
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -109,8 +145,8 @@ export default function CustomTable() {
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [orderBy, setOrderBy] = React.useState<keyof Data>('name');
   const rows = useAppSelector(dataObjects)
-  const dispatch = useAppDispatch();
   const [order, setOrder] = React.useState<Order>('asc');
+  const dispatch = useAppDispatch();
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);

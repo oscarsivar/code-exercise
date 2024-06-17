@@ -1,3 +1,15 @@
+/**
+ * store.ts
+ *
+ * This works as root reducer to retrieve data for CustomTable.tsx
+ *
+ * Dependencies:
+ * - Reduxjs/toolkit: set store and actions
+ *
+ * Author: Oscar Elías
+ * Date: 16-06-2024
+ */
+
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import dataReducer from '../features/data/dataSlice';
 

@@ -1,3 +1,18 @@
+/**
+ * App.tsx
+ *
+ * This component is the entry point to the application to show table with result or not result component.
+ *
+ *
+ * Dependencies:
+ * - Redux slice: get data stored to check array size to show the CustomTable or NoResult component.
+ *
+ * Example Usage:
+ * <App />
+ *
+ * Author: Oscar Elías
+ * Date: 16-06-2024
+ */
 import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';

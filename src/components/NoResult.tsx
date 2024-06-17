@@ -1,3 +1,18 @@
+/**
+ * NoResult.tsx
+ *
+ * This component renders a custom image and message when no results exist.
+ *
+ * Dependencies:
+ * - @mui/material components: to create a custom component when data array is empty
+ *
+ * Example Usage:
+ * <NoResult />
+ *
+ * Author: Oscar Elías
+ * Date: 16-06-2024
+ */
+
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
